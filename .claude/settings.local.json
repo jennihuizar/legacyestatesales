@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/Application/**)",
+      "Read(//c/Users/fresq/AppData/Local/Google/Chrome/Application/**)"
+    ]
+  }
+}
