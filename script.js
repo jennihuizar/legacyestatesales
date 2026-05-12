@@ -178,71 +178,77 @@
     });
   }
 
-  /* ---------- Lightbox ---------- */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox && lightbox.querySelector('.lightbox__img');
-  const closeBtn = lightbox && lightbox.querySelector('.lightbox__close');
-  const prevBtn = lightbox && lightbox.querySelector('.lightbox__nav--prev');
-  const nextBtn = lightbox && lightbox.querySelector('.lightbox__nav--next');
-  const tiles = Array.from(document.querySelectorAll('[data-lightbox-src]'));
+  /* ---------- Consultation modal ---------- */
+  const modalTriggers = document.querySelectorAll('[data-open-modal]');
+  const modals = document.querySelectorAll('.modal');
+  let modalLastFocus = null;
+  let openModalEl = null;
 
-  let lightboxIndex = -1;
-  let lastFocusBeforeLightbox = null;
-
-  const openLightbox = (index) => {
-    if (!lightbox || !tiles.length) return;
-    lightboxIndex = (index + tiles.length) % tiles.length;
-    const tile = tiles[lightboxIndex];
-    lastFocusBeforeLightbox = document.activeElement;
-    lightboxImg.src = tile.dataset.lightboxSrc;
-    lightboxImg.alt = tile.dataset.lightboxAlt || '';
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
+  function openModal(id) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    modalLastFocus = document.activeElement;
+    openModalEl = m;
+    m.classList.add('is-open');
+    m.setAttribute('aria-hidden', 'false');
     document.body.classList.add('no-scroll');
-    closeBtn && closeBtn.focus();
-  };
+    const first = m.querySelector('input:not([type="hidden"]):not(.form-hp), select, textarea');
+    if (first) first.focus();
+  }
 
-  const closeLightbox = () => {
-    if (!lightbox) return;
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxImg.src = '';
-    lightboxImg.alt = '';
+  function closeModal(m) {
+    if (!m) return;
+    m.classList.remove('is-open');
+    m.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
-    if (lastFocusBeforeLightbox && typeof lastFocusBeforeLightbox.focus === 'function') {
-      lastFocusBeforeLightbox.focus();
-    }
-  };
+    openModalEl = null;
+    if (modalLastFocus && typeof modalLastFocus.focus === 'function') modalLastFocus.focus();
+  }
 
-  const cycleLightbox = (delta) => openLightbox(lightboxIndex + delta);
-
-  tiles.forEach((tile, i) => {
-    tile.addEventListener('click', () => openLightbox(i));
+  modalTriggers.forEach(btn => {
+    btn.addEventListener('click', () => openModal(btn.dataset.openModal));
+  });
+  modals.forEach(m => {
+    m.querySelectorAll('[data-close-modal]').forEach(b => {
+      b.addEventListener('click', () => closeModal(m));
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && openModalEl) closeModal(openModalEl);
   });
 
-  if (lightbox) {
-    closeBtn && closeBtn.addEventListener('click', closeLightbox);
-    prevBtn && prevBtn.addEventListener('click', () => cycleLightbox(-1));
-    nextBtn && nextBtn.addEventListener('click', () => cycleLightbox(1));
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('is-open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowLeft') cycleLightbox(-1);
-      else if (e.key === 'ArrowRight') cycleLightbox(1);
-      else if (e.key === 'Tab') {
-        // simple focus trap among the lightbox controls
-        const focusable = [closeBtn, prevBtn, nextBtn].filter(Boolean);
-        if (!focusable.length) return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault(); last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault(); first.focus();
-        }
+  /* ---------- Consultation form submit (Formspree AJAX) ---------- */
+  const consultForm = document.getElementById('consultation-form');
+  if (consultForm) {
+    consultForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = consultForm.querySelector('button[type="submit"]');
+      const errorEl = document.getElementById('consultation-form-error');
+      const originalLabel = submitBtn.textContent;
+      errorEl.hidden = true;
+
+      // basic HTML5 validity check (since form has novalidate)
+      if (!consultForm.checkValidity()) {
+        consultForm.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(consultForm.action, {
+          method: 'POST',
+          body: new FormData(consultForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!res.ok) throw new Error('Submission failed: ' + res.status);
+        document.getElementById('consultation-form-view').hidden = true;
+        document.getElementById('consultation-success').hidden = false;
+      } catch (err) {
+        errorEl.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
       }
     });
   }

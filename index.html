@@ -45,17 +45,16 @@
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#sales">Sales</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <a class="phone-pill" href="tel:+15055550123" aria-label="Call Legacy Estate Sales at 5 0 5, 5 5 5, 0 1 2 3">
+      <a class="phone-pill" href="tel:+15053408753" aria-label="Call Legacy Estate Sales at 5 0 5, 3 4 0, 8 7 5 3">
         <svg class="phone-pill__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z" />
         </svg>
-        <span class="phone-pill__num">(505) 555-0123</span>
+        <span class="phone-pill__num">(505) 340-8753</span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -73,11 +72,10 @@
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#sales">Sales</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <a class="mobile-nav__cta" href="tel:+15055550123">Call (505) 555-0123</a>
+        <a class="mobile-nav__cta" href="tel:+15053408753">Call (505) 340-8753</a>
       </div>
     </div>
   </header>
@@ -108,7 +106,7 @@
             honoring its story while maximizing its value.
           </p>
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#contact">Schedule a Consultation</a>
+            <button class="btn btn--primary" type="button" data-open-modal="consultation-modal">Schedule a Consultation</button>
             <a class="btn btn--outline" href="#sales">View Upcoming Sales</a>
           </div>
         </div>
@@ -123,12 +121,6 @@
         </figure>
       </div>
 
-      <a class="hero__scroll" href="#about" aria-label="Scroll down">
-        <span class="hero__scroll-text">Scroll</span>
-        <svg class="hero__scroll-caret" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
-        </svg>
-      </a>
     </section>
 
     <!-- ============================== ABOUT ============================== -->
@@ -347,47 +339,6 @@
       </div>
     </section>
 
-    <!-- ============================== GALLERY ============================== -->
-    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="container">
-        <header class="section-head" data-reveal="up">
-          <p class="eyebrow">
-            <span class="eyebrow__rule" aria-hidden="true"></span>
-            <span>The Legacy Mark</span>
-            <span class="eyebrow__rule" aria-hidden="true"></span>
-          </p>
-          <h2 class="section-title" id="gallery-title">A Sign of Trust, Across New Mexico.</h2>
-          <p class="section-lead">
-            You&rsquo;ll see our green and cream signposts in driveways from the North Valley
-            to the East Mountains.
-          </p>
-        </header>
-
-        <div class="gallery__grid">
-          <button type="button" class="tile tile--a" data-lightbox-src="images/poster-mountains.png" data-lightbox-alt="Legacy Estate Sales yard sign in front of an adobe home with the Sandia Mountains and desert garden behind." data-reveal="up">
-            <img src="images/poster-mountains.png" alt="Legacy Estate Sales yard sign in front of an adobe home with the Sandia Mountains and desert garden behind." loading="lazy" />
-            <span class="tile__caption">Sandia Heights &middot; Estate Sale</span>
-          </button>
-          <button type="button" class="tile tile--b" data-lightbox-src="images/sign-adobe-mountains.png" data-lightbox-alt="Estate sale directional sign in front of an adobe home with cactus and mountains behind." data-reveal="up" data-reveal-delay="80">
-            <img src="images/sign-adobe-mountains.png" alt="Estate sale directional sign in front of an adobe home with cactus and the Sandia Mountains behind." loading="lazy" />
-            <span class="tile__caption">North Valley &middot; Directional</span>
-          </button>
-          <button type="button" class="tile tile--c" data-lightbox-src="images/sign-pueblo.png" data-lightbox-alt="Estate sale sign in front of a pueblo-style home with desert landscaping." data-reveal="up" data-reveal-delay="160">
-            <img src="images/sign-pueblo.png" alt="Estate sale sign in front of a pueblo-style home with desert landscaping." loading="lazy" />
-            <span class="tile__caption">Placitas &middot; Pueblo Estate</span>
-          </button>
-          <button type="button" class="tile tile--d" data-lightbox-src="images/tee-diptych.png" data-lightbox-alt="A team member in branded Legacy Estate Sales apparel, photographed front and back inside a furnished home." data-reveal="up" data-reveal-delay="240">
-            <img src="images/tee-diptych.png" alt="A team member in branded Legacy Estate Sales apparel, photographed front and back inside a furnished home." loading="lazy" />
-            <span class="tile__caption">The Legacy Crest</span>
-          </button>
-          <button type="button" class="tile tile--e" data-lightbox-src="images/sign-lavender.png" data-lightbox-alt="Estate sale sign with adobe wall and lavender in bloom and mountains behind." data-reveal="up" data-reveal-delay="320">
-            <img src="images/sign-lavender.png" alt="Estate sale sign with adobe wall and lavender in bloom and mountains behind." loading="lazy" />
-            <span class="tile__caption">Corrales &middot; Spring Sale</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
     <!-- ============================== UPCOMING SALES ============================== -->
     <section class="sales" id="sales" aria-labelledby="sales-title">
       <div class="sales__bg" aria-hidden="true">
@@ -434,18 +385,18 @@
           </p>
 
           <div class="closing__cta-row" data-reveal="up" data-reveal-delay="360">
-            <a class="btn btn--primary btn--lg" href="tel:+15055550123">Schedule Your Private Consultation</a>
+            <button class="btn btn--primary btn--lg" type="button" data-open-modal="consultation-modal">Schedule Your Private Consultation</button>
             <p class="closing__tagline"><em>Experience the Legacy Estate Sales difference.</em></p>
           </div>
 
           <dl class="contact__details" data-reveal="up" data-reveal-delay="480">
             <div class="contact__row">
               <dt>By Phone</dt>
-              <dd><a class="contact__phone" href="tel:+15055550123" aria-label="Call Legacy Estate Sales at 5 0 5, 5 5 5, 0 1 2 3">(505) 555-0123</a></dd>
+              <dd><a class="contact__phone" href="tel:+15053408753" aria-label="Call Legacy Estate Sales at 5 0 5, 3 4 0, 8 7 5 3">(505) 340-8753</a></dd>
             </div>
             <div class="contact__row">
               <dt>By Email</dt>
-              <dd><a class="contact__email" href="mailto:info@legacyestatesalesnm.com">info@legacyestatesalesnm.com</a></dd>
+              <dd><a class="contact__email" href="mailto:legacyestatesalesnm@gmail.com">legacyestatesalesnm@gmail.com</a></dd>
             </div>
             <div class="contact__row">
               <dt>Service Area</dt>
@@ -503,7 +454,6 @@
           <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#sales">Sales</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -512,8 +462,8 @@
       <div class="site-footer__contact">
         <h2 class="site-footer__heading">Contact</h2>
         <ul role="list">
-          <li><a href="tel:+15055550123">(505) 555-0123</a></li>
-          <li><a href="mailto:info@legacyestatesalesnm.com">info@legacyestatesalesnm.com</a></li>
+          <li><a href="tel:+15053408753">(505) 340-8753</a></li>
+          <li><a href="mailto:legacyestatesalesnm@gmail.com">legacyestatesalesnm@gmail.com</a></li>
           <li>Albuquerque &middot; New Mexico</li>
         </ul>
         <ul class="socials socials--footer" role="list">
@@ -548,18 +498,91 @@
     </div>
   </footer>
 
-  <!-- ============================== LIGHTBOX ============================== -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image preview">
-    <button type="button" class="lightbox__close" aria-label="Close image preview">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M6 6l12 12M18 6L6 18" /></svg>
-    </button>
-    <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous image">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6" /></svg>
-    </button>
-    <img class="lightbox__img" src="" alt="" />
-    <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next image">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
-    </button>
+  <!-- ============================== CONSULTATION MODAL ============================== -->
+  <div class="modal" id="consultation-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="consultation-modal-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel" role="document">
+      <button type="button" class="modal__close" data-close-modal aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+
+      <div class="modal__form-view" id="consultation-form-view">
+        <header class="modal__head">
+          <p class="eyebrow">
+            <span class="eyebrow__rule" aria-hidden="true"></span>
+            <span>Private Consultation</span>
+            <span class="eyebrow__rule" aria-hidden="true"></span>
+          </p>
+          <h2 class="modal__title" id="consultation-modal-title">Schedule Your Private Consultation</h2>
+          <p class="modal__lead">Share a few details about the estate. We&rsquo;ll respond within one business day to arrange a private, no-obligation walkthrough.</p>
+        </header>
+
+        <form class="consultation-form" id="consultation-form" action="https://formspree.io/f/maqvvnzv" method="POST" novalidate>
+          <div class="form-row">
+            <label for="cf-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="form-row form-row--2">
+            <div>
+              <label for="cf-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input id="cf-phone" name="phone" type="tel" required autocomplete="tel" />
+            </div>
+            <div>
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-location">Property City &amp; ZIP</label>
+            <input id="cf-location" name="location" type="text" placeholder="e.g., Albuquerque, 87114" autocomplete="address-level2" />
+          </div>
+
+          <div class="form-row">
+            <label for="cf-timeframe">Preferred Timeframe</label>
+            <select id="cf-timeframe" name="timeframe">
+              <option value="">Select a timeframe</option>
+              <option>Within a week</option>
+              <option>Within a month</option>
+              <option>1&ndash;3 months</option>
+              <option>Just exploring options</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-notes">Tell us about the estate</label>
+            <textarea id="cf-notes" name="notes" rows="4" placeholder="Square footage, key items, any time constraints, anything we should know."></textarea>
+          </div>
+
+          <input type="hidden" name="_subject" value="New consultation request from legacyestatesalesnm.com" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-hp" />
+
+          <div class="form-actions">
+            <button class="btn btn--primary btn--lg" type="submit">Send Request</button>
+            <p class="form-actions__note">Your details are used only to contact you about a consultation.</p>
+          </div>
+
+          <p class="form-error" id="consultation-form-error" hidden>
+            We couldn&rsquo;t send your message. Please try again, or call us at
+            <a href="tel:+15053408753">(505) 340-8753</a>.
+          </p>
+        </form>
+      </div>
+
+      <div class="modal__success-view" id="consultation-success" hidden>
+        <p class="eyebrow">
+          <span class="eyebrow__rule" aria-hidden="true"></span>
+          <span>Received</span>
+          <span class="eyebrow__rule" aria-hidden="true"></span>
+        </p>
+        <h3 class="modal__title">Thank you.</h3>
+        <p class="modal__lead">We&rsquo;ll be in touch within one business day to arrange your consultation.</p>
+        <div class="form-actions">
+          <button type="button" class="btn btn--outline" data-close-modal>Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
